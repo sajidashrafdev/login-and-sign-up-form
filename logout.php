@@ -1,12 +1,9 @@
 <?php
-// Start the session
 session_start();
 
-// Destroy all session data
 session_unset();
 session_destroy();
 
-// Optionally, destroy the session cookie (for extra security)
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(
@@ -20,7 +17,6 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-// Redirect to login page
 header("Location: login.php");
 exit;
 ?>
